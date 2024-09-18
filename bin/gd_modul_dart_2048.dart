@@ -59,15 +59,15 @@ class LoginRepository{
   String password = "123";
 
   Future<User> login(String username, String password) async{
-    print("Logining...");
+    print("Logging in...");
     User userData = User();
     await Future.delayed(Duration(seconds: 3), () {
       if (this.username == username && this.password == password) {
-        // ignore: unused_local_variable
-        User userData = User(
+        userData = User(
           name: username,
           password: password,
           token: "12345");
+          
       } else if(username == '' || password == '') {
         throw 'Username or password cannot be empty';
       }else{
